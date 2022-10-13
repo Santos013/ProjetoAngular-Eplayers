@@ -58,10 +58,11 @@ export class LoginComponent implements OnInit {
 
   fazerLogin() {
 
-    // console.log('DADOS', this.userModel);
-    //clicando no send do insomnia
-    // this.userService.login(this.userModel).subscribe(fnOK, fnErr)
-    // this.userService.login(this.userModel).subscribe({next: fnSuccess, next: fnSuccess})
+    console.log('DADOS', this.userModel);
+    //clicando na send do insomnia
+    this.userService.login(this.userModel).subscribe(function (response) {
+      console.log(response);
+    })
 
 
 
@@ -103,33 +104,6 @@ export class LoginComponent implements OnInit {
 
 
   } //fim da função
-
-
-
-
-  // (response) => {
-  //   console.log(response);
-  //   this.mensagem = "Login efetuado com sucesso"
-
-  //       // console.log("Status Code", response.status);
-  //       // console.log("Status Text", response.statusText);
-  //       // console.log("Access Token", response.body.accessToken);
-  //       // console.log("Usuário retornado", response.body.user);
-
-  //   },  (responseError) => {
-  //     console.log('ERROOOOOOOOOOO', responseError);
-  //     this.mensagem = responseError.error
-
-  //   }
-
-
-
-
-
-
-
-
-
 
 
 }
